@@ -50,18 +50,19 @@ const portfolioData = {
     },
 
     {
-      title: "Tools & Cloud",
+      title: "Algorithms & Tools",
       icon: "terminal",
       color: "teal",
       description:
-        "Building reproducible and production-oriented workflows.",
+        "Rigorous algorithmic problem solving and production-oriented workflows.",
       technologies: [
+        "LeetCode (300+)",
+        "DSA & Algorithms",
         "Python",
         "SQL",
         "Docker",
         "Azure",
-        "Git",
-        "Streamlit"
+        "Git"
       ]
     }
   ],
