@@ -120,48 +120,65 @@ a {
 
 
 .eyebrow {
-
   margin: 0 0 12px;
-
-  color: var(--cyan);
-
+  color: var(--primary-dynamic);
   font-size: 0.72rem;
-
   font-weight: 800;
-
   letter-spacing: 0.16em;
+  transition: color 0.35s ease, text-shadow 0.35s ease;
+}
+
+
+.section.is-active .eyebrow {
+  color: var(--primary-dynamic-bright);
+  text-shadow: 0 0 16px var(--glow-dynamic);
 }
 
 
 .section-heading {
-
+  position: relative;
   max-width: 680px;
-
   margin-bottom: 55px;
+}
 
+
+.section-heading::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -12px;
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary-dynamic), var(--secondary-dynamic), transparent);
+  box-shadow: 0 0 12px var(--primary-dynamic);
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+
+.section.is-active .section-heading::before {
+  width: 50px;
 }
 
 
 .section-heading h2 {
-
   margin: 0 0 12px;
-
-  font-size:
-    clamp(2rem, 4vw, 3rem);
-
+  font-size: clamp(2rem, 4vw, 3rem);
   letter-spacing: -0.04em;
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+}
 
+
+.section.is-active .section-heading h2 {
+  color: #ffffff;
+  text-shadow: 0 0 35px var(--glow-dynamic-subtle);
 }
 
 
 .section-heading > p:last-child {
-
   margin: 0;
-
   color: var(--muted);
-
   line-height: 1.7;
-
 }
 
 

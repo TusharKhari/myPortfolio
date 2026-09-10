@@ -46,6 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize Contact Form
   initContactForm();
 
+  // Initialize Scrollspy for dynamic heading and navbar highlights
+  initScrollSpy();
+
   // Mobile-friendly smooth scrolling
   document.querySelectorAll('a[href^="#"]').forEach(link => {
 
@@ -68,6 +71,76 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+
+/**
+ * Scrollspy Controller
+ * Highlights respective section headings and navbar links as user scrolls
+ */
+function initScrollSpy() {
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-links a, .nav-cta");
+
+  if (!sections.length || !navLinks.length) return;
+
+  let ticking = false;
+
+  function updateHighlights() {
+    const scrollPosition = window.scrollY + window.innerHeight * 0.35;
+    const isBottom =
+      window.innerHeight + window.scrollY >=
+      document.documentElement.scrollHeight - 60;
+
+    let currentSectionId = "";
+
+    if (isBottom) {
+      currentSectionId = "contact";
+    } else {
+      sections.forEach(section => {
+        const top = section.offsetTop;
+        const height = section.offsetHeight;
+        if (scrollPosition >= top && scrollPosition < top + height) {
+          currentSectionId = section.getAttribute("id");
+        }
+      });
+    }
+
+    // 1. Highlight respective in-page section heading
+    sections.forEach(section => {
+      if (section.getAttribute("id") === currentSectionId) {
+        section.classList.add("is-active");
+      } else {
+        section.classList.remove("is-active");
+      }
+    });
+
+    // 2. Highlight respective navbar link / heading
+    navLinks.forEach(link => {
+      const href = link.getAttribute("href");
+      if (href === `#${currentSectionId}`) {
+        link.classList.add("active");
+      } else {
+        link.classList.remove("active");
+      }
+    });
+
+    ticking = false;
+  }
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        requestAnimationFrame(updateHighlights);
+        ticking = true;
+      }
+    },
+    { passive: true }
+  );
+
+  // Initial highlight on load
+  updateHighlights();
+}
 
 
 /**
