@@ -500,7 +500,7 @@
 
         <div class="contact-card">
 
-          <div>
+          <div class="contact-intro">
 
             <p class="eyebrow">
               GET IN TOUCH
@@ -513,35 +513,92 @@
               </span>
             </h2>
 
-            <p>
+            <p class="contact-description">
               I'm currently based in Aalen, Germany and open to
-              full-time opportunities, research collaborations and
-              data / AI engineering projects.
+              work student, internship, full-time opportunities, research collaborations and
+              data / AI engineering projects. Drop a message below and it will be transmitted directly to my email.
             </p>
 
+            <div class="contact-badges">
+              <div class="contact-pill">
+                <span class="status-dot"></span>
+                <span>Response time: &lt; 24 hours</span>
+              </div>
+              <div class="contact-pill">
+                <i data-lucide="map-pin"></i>
+                <span>Aalen, Germany (CET)</span>
+              </div>
+            </div>
+
+            <div class="contact-direct">
+              <a href="mailto:tusharkhari25@gmail.com" class="direct-link">
+                <i data-lucide="mail"></i>
+                <span>tusharkhari25@gmail.com</span>
+              </a>
+              <a
+                href="https://linkedin.com/in/tusharkhari"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="direct-link"
+              >
+                <i data-lucide="linkedin"></i>
+                <span>linkedin.com/in/tusharkhari</span>
+              </a>
+            </div>
+
           </div>
 
-          <div class="contact-actions">
+          <form id="contact-form" class="contact-form">
 
-            <a
-              href="mailto:tusharkhari25@gmail.com"
-              class="btn btn-primary"
-            >
-              <i data-lucide="mail"></i>
-              tusharkhari25@gmail.com
-            </a>
+            <div class="form-group">
+              <label for="contact-name">Your Name</label>
+              <div class="input-wrapper">
+                <i data-lucide="user"></i>
+                <input
+                  type="text"
+                  id="contact-name"
+                  name="name"
+                  placeholder="e.g. Alex Morgan"
+                  required
+                />
+              </div>
+            </div>
 
-            <a
-              href="https://linkedin.com/in/tusharkhari"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-secondary"
-            >
-              <i data-lucide="linkedin"></i>
-              Connect on LinkedIn
-            </a>
+            <div class="form-group">
+              <label for="contact-email">Your Email</label>
+              <div class="input-wrapper">
+                <i data-lucide="mail"></i>
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="email"
+                  placeholder="alex@example.com"
+                  required
+                />
+              </div>
+            </div>
 
-          </div>
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <div class="input-wrapper">
+                <i data-lucide="message-square" class="textarea-icon"></i>
+                <textarea
+                  id="contact-message"
+                  name="message"
+                  rows="4"
+                  placeholder="Tell me about your team, role, or project..."
+                  required
+                ></textarea>
+              </div>
+            </div>
+
+            <button type="submit" id="contact-submit-btn" class="btn btn-primary submit-btn">
+              <span class="btn-text">Transmit Message</span>
+              <i data-lucide="send"></i>
+            </button>
+
+            <div id="form-status" class="form-status" aria-live="polite"></div>
+          </form>
 
         </div>
 
