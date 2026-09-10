@@ -2,19 +2,34 @@
   --bg: #030712;
   --bg-soft: #07111f;
 
-  --cyan: #22d3ee;
-  --cyan-bright: #67e8f9;
+  /* Dynamic high-chroma cyber palette (updated in real-time by dynamic chromatic engine) */
+  --hue-primary: 195;
+  --hue-secondary: 245;
+  --hue-accent: 290;
 
-  --indigo: #818cf8;
+  --primary-dynamic: hsl(var(--hue-primary), 95%, 62%);
+  --primary-dynamic-bright: hsl(var(--hue-primary), 100%, 76%);
+  --secondary-dynamic: hsl(var(--hue-secondary), 92%, 66%);
+  --accent-dynamic: hsl(var(--hue-accent), 90%, 68%);
+
+  --glow-dynamic: hsla(var(--hue-primary), 95%, 60%, 0.32);
+  --glow-dynamic-subtle: hsla(var(--hue-primary), 95%, 60%, 0.14);
+  --border-dynamic: hsla(var(--hue-primary), 90%, 65%, 0.28);
+  --border-dynamic-hover: hsla(var(--hue-primary), 95%, 72%, 0.58);
+  --badge-bg-dynamic: hsla(var(--hue-primary), 90%, 35%, 0.16);
+
+  /* Unified aliases for instant site-wide synchrony */
+  --cyan: var(--primary-dynamic);
+  --cyan-bright: var(--primary-dynamic-bright);
+  --indigo: var(--secondary-dynamic);
 
   --text: #f8fafc;
   --muted: #94a3b8;
   --muted-dark: #64748b;
 
-  --border: rgba(255,255,255,0.08);
+  --border: rgba(255, 255, 255, 0.08);
 
-  --card:
-    rgba(15, 23, 42, 0.62);
+  --card: rgba(15, 23, 42, 0.65);
 }
 
 
@@ -29,22 +44,18 @@ html {
 
 
 body {
-
   margin: 0;
-
   background:
     radial-gradient(
-      circle at 20% 10%,
-      rgba(34,211,238,0.07),
-      transparent 30%
+      circle at 20% 15%,
+      hsla(var(--hue-primary), 90%, 55%, 0.09),
+      transparent 35%
     ),
-
     radial-gradient(
-      circle at 80% 70%,
-      rgba(99,102,241,0.07),
-      transparent 30%
+      circle at 80% 75%,
+      hsla(var(--hue-secondary), 90%, 55%, 0.08),
+      transparent 35%
     ),
-
     var(--bg);
 
   color: var(--text);
@@ -59,12 +70,13 @@ body {
     sans-serif;
 
   overflow-x: hidden;
+  transition: background 0.4s ease;
 }
 
 
 ::selection {
-  background: var(--cyan);
-  color: #000;
+  background: var(--primary-dynamic);
+  color: #020617;
 }
 
 
@@ -154,110 +166,81 @@ a {
 
 
 .gradient-text {
-
   background:
     linear-gradient(
-      90deg,
-      var(--cyan-bright),
-      #38bdf8,
-      var(--indigo)
+      135deg,
+      var(--primary-dynamic-bright),
+      var(--primary-dynamic) 45%,
+      var(--secondary-dynamic) 85%,
+      var(--accent-dynamic)
     );
-
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
   -webkit-background-clip: text;
-
   background-clip: text;
-
   color: transparent;
+  display: inline-block;
 }
 
 
 .glass-card {
-
   background: var(--card);
-
   border: 1px solid var(--border);
-
   backdrop-filter: blur(18px);
-
   -webkit-backdrop-filter: blur(18px);
-
   border-radius: 22px;
-
   transition:
-    border-color .25s ease,
-    transform .25s ease,
-    background .25s ease;
+    border-color .3s ease,
+    transform .3s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow .3s ease,
+    background .3s ease;
 }
 
 
 .glass-card:hover {
-
-  border-color:
-    rgba(34,211,238,0.25);
-
-  transform:
-    translateY(-4px);
-
-  background:
-    rgba(15,23,42,0.76);
+  border-color: var(--border-dynamic-hover);
+  transform: translateY(-4px);
+  background: rgba(15, 23, 42, 0.78);
+  box-shadow:
+    0 16px 36px -12px var(--glow-dynamic-subtle),
+    0 0 0 1px var(--border-dynamic);
 }
 
 
 #bg-canvas {
-
   position: fixed;
-
   inset: 0;
-
   width: 100%;
-
   height: 100%;
-
   z-index: 0;
-
   pointer-events: none;
-
 }
 
 
 .ambient {
-
   position: fixed;
-
-  width: 400px;
-
-  height: 400px;
-
+  width: 450px;
+  height: 450px;
   border-radius: 50%;
-
-  filter: blur(120px);
-
-  opacity: .12;
-
+  filter: blur(130px);
+  opacity: .14;
   pointer-events: none;
-
   z-index: 0;
+  transition: background 0.5s ease, opacity 0.5s ease;
 }
 
 
 .ambient-cyan {
-
-  top: 10%;
-
-  left: 10%;
-
-  background: var(--cyan);
-
+  top: 8%;
+  left: 8%;
+  background: var(--primary-dynamic);
 }
 
 
 .ambient-indigo {
-
   right: 5%;
-
-  bottom: 10%;
-
-  background: #6366f1;
+  bottom: 8%;
+  background: var(--secondary-dynamic);
 }
 
 

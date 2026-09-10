@@ -133,6 +133,23 @@ const portfolioData = {
   projects: [
 
     {
+  "category": "MACHINE LEARNING",
+  "title": "AI4I Predictive Maintenance System",
+  "description": "Production-ready ML system forecasting industrial equipment failure from real-time telemetry. Features XGBoost classification, SHAP operational risk explainability, and an interactive Streamlit monitoring dashboard.",
+  "technologies": [
+    "Python",
+    "XGBoost",
+    "Scikit-learn",
+    "FastAPI",
+    "Streamlit",
+    "SHAP",
+    "PostgreSQL"
+  ],
+  "icon": "activity",
+  "github": "https://predictivemaintenanceconsole-sgmntdcathmhurbtet2u4s.streamlit.app/",
+},
+
+    {
       category: "DATA ENGINEERING",
 
       title: "Medallion Data Warehouse",
@@ -149,7 +166,7 @@ const portfolioData = {
 
       icon: "database",
 
-      github: "#"
+      github: "https://github.com/TusharKhari/data-warehouse-b"
     },
 
 
@@ -171,7 +188,7 @@ const portfolioData = {
 
       icon: "scan-face",
 
-      github: "#"
+      github: "https://github.com/TusharKhari/personal_data_detector_image_and_video"
     },
 
 
@@ -192,7 +209,7 @@ const portfolioData = {
 
       icon: "users",
 
-      github: "#"
+      github: "https://github.com/TusharKhari/customer-behavior-analysis"
     },
 
 
@@ -214,7 +231,7 @@ const portfolioData = {
 
       icon: "image",
 
-      github: "#"
+      github: "https://github.com/TusharKhari/machine-learning-ex/tree/main/ex5"
     }
 
   ]
