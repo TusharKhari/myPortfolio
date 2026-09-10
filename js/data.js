@@ -235,6 +235,10 @@ const portfolioData = {
       github: "https://github.com/TusharKhari/machine-learning-ex/tree/main/ex5"
     }
 
+  ],
+
+  currentlyBuilding: [
+    "LLM powered RAG System with near zero hallucination.",
   ]
 
 };

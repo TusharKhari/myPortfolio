@@ -166,3 +166,23 @@ function renderProjects() {
 
   `).join("");
 }
+
+
+function renderCurrentlyWorking() {
+  const container = document.getElementById("currently-working-container");
+  if (!container) return;
+
+  const items = portfolioData.currentlyBuilding || portfolioData.currentlyWorking || [];
+  if (!items.length) return;
+
+  container.innerHTML = `
+    <div class="currently-building-card glass-card">
+      <p class="mini-label">CURRENTLY BUILDING</p>
+      <div class="building-pills">
+        ${items.map(item => `
+          <span class="building-pill">${item}</span>
+        `).join("")}
+      </div>
+    </div>
+  `;
+}

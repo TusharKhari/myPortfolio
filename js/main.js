@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderSkills();
   renderExperience();
   renderProjects();
+  renderCurrentlyWorking();
 
   // Lucide icons
   lucide.createIcons();
