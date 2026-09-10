@@ -7,6 +7,10 @@
     animation: floatCard 6s ease-in-out infinite;
   }
 
+  .about-portrait-card {
+    animation: portraitFloat 7s ease-in-out infinite;
+  }
+
   .status-dot {
     animation: statusPulse 2s ease-in-out infinite;
   }
@@ -60,6 +64,36 @@
 
   50% {
     transform: translateY(-7px);
+  }
+}
+
+
+@keyframes portraitFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+
+@keyframes neuralScan {
+  0% {
+    top: -5%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  85% {
+    opacity: 0.85;
+  }
+  100% {
+    top: 105%;
+    opacity: 0;
   }
 }
 
