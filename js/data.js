@@ -242,6 +242,25 @@ const portfolioData = {
   projects: [
 
     {
+      category: "AUTONOMOUS AI AGENT",
+      title: "ApplyPilot (AI Agent With Human in the Loop)",
+      description:
+        "Autonomous, open-source AI job application assistant powered by Claude Code CLI and Nous Hermes Agent. Navigates complex ATS portals via Chrome CDP & Playwright MCP, auto-fills candidate profiles, answers screening questions via persistent Q&A memory, handles smart document hierarchies, and provides review-first human-in-the-loop safety.",
+      technologies: [
+        "Python",
+        "Claude Code CLI",
+        "Hermes Agent",
+        "Playwright MCP",
+        "Chrome CDP",
+        "DeepSeek / NIM",
+        "SQLite",
+        "Human-in-the-Loop"
+      ],
+      icon: "bot",
+      github: "https://github.com/TusharKhari/ApplyPilot-f"
+    },
+
+    {
       category: "MOBILE APP / FLUTTER",
       title: "Weather App (DDD & BLoC)",
       description:
