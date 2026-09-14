@@ -523,7 +523,7 @@
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 15px;
   margin-bottom: 90px;
 }
@@ -798,12 +798,8 @@
 /* SKILLS */
 
 .skills-grid {
-
   display: grid;
-
-  grid-template-columns:
-    repeat(4, 1fr);
-
+  grid-template-columns: repeat(3, 1fr);
   gap: 18px;
 }
 
@@ -1200,51 +1196,44 @@
 /* EDUCATION */
 
 .education-grid {
-
   display: grid;
-
-  grid-template-columns:
-    repeat(2, 1fr);
-
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
+@media (max-width: 1080px) {
+  .education-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 .education-card {
-
   display: flex;
-
   gap: 20px;
-
   padding: 30px;
 }
 
-
 .education-icon {
-
   flex-shrink: 0;
-
   width: 45px;
-
   height: 45px;
-
   display: grid;
-
   place-items: center;
-
   border-radius: 12px;
-
-  background:
-    rgba(129,140,248,.08);
-
+  background: rgba(129, 140, 248, 0.08);
   color: #a5b4fc;
 }
-
 
 .education-icon.cyan {
   background: var(--badge-bg-dynamic);
   border: 1px solid var(--border-dynamic);
   color: var(--primary-dynamic);
+}
+
+.education-icon.teal {
+  background: rgba(20, 184, 166, 0.1);
+  border: 1px solid rgba(20, 184, 166, 0.3);
+  color: #5eead4;
 }
 
 
